@@ -1,0 +1,78 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.titre {
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.photocomité {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photocomité img {
+  width: 100%; /* image box size as % of container, see step 1 */
+  height: 100%; /* image box size as % of container, see step 1 */
+  object-fit: cover;
+  z-index: -1;
+}
+
+.photocomité:after {
+  content: "";
+  position: absolute;
+  height: 5em;
+  width: 100%;
+  bottom: 0em;
+  left: 0;
+  background: linear-gradient(
+    to top,
+    var(--dark-bg-color),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+h3 {
+  text-align: start;
+  margin-top: 0.5em;
+  position: relative;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+p {
+  text-align: start;
+}
+
+.grade {
+  font-style: italic;
+}
+
+h3:after {
+  content: "";
+  position: absolute;
+  bottom: -0.3em;
+  left: 0;
+  width: 7em;
+  height: 0.2em;
+  border-radius: 1em;
+  background-color: var(--light-blue-color);
+}
+
+@media only screen and (max-width: 900px) {
+  .photocomité {
+    height: max-content;
+  }
+}
